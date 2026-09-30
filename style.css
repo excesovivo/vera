@@ -16,6 +16,7 @@ body {
     overflow: hidden;
 }
 
+
 /* =========================
    SOBRE
 ========================= */
@@ -52,6 +53,7 @@ body {
     opacity: 0.85;
 }
 
+
 @keyframes pulse {
     0% {
         transform: scale(1);
@@ -66,6 +68,7 @@ body {
     }
 }
 
+
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -77,6 +80,7 @@ body {
         transform: scale(1);
     }
 }
+
 
 @keyframes pageIn {
     from {
@@ -99,20 +103,36 @@ body {
     display: none;
     position: fixed;
     inset: 0;
+
     justify-content: center;
     align-items: center;
-    padding: 20px;
+
+    padding: 15px;
 }
+
+
+/*
+   Esta es la parte importante:
+   usamos una ventana casi cuadrada,
+   parecida a la original.
+*/
 
 .letter-window {
     width: min(90vw, 800px);
-    height: min(88vh, 680px);
 
-    padding: 70px 60px 40px;
+    aspect-ratio: 1 / 1;
+
+    max-height: 90vh;
+
+    padding: 180px 60px 35px;
 
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+
+    justify-content: flex-start;
     align-items: center;
+
+    text-align: center;
 
     background-image: url("window.png");
     background-size: 100% 100%;
@@ -121,7 +141,9 @@ body {
 
     border-radius: 12px;
 
-    transform: scale(0.9);
+    gap: 1px;
+
+    transform: scale(1.2);
     opacity: 0;
 
     transition:
@@ -145,8 +167,9 @@ body {
 
     display: none;
     flex-direction: column;
-    align-items: center;
+
     justify-content: flex-start;
+    align-items: center;
 
     text-align: center;
 
@@ -165,29 +188,58 @@ body {
 ========================= */
 
 h1 {
-    font-size: clamp(26px, 4.5vw, 37px);
-    margin: 2px 0 12px;
+    font-size: clamp(25px, 4vw, 32px);
+
+    margin: 0 0 8px;
+
     flex-shrink: 0;
 }
 
 
 /* =========================
-   TEXTO DE LA CARTA
+   GATITOS
+========================= */
+
+.cat {
+    width: 200px;
+
+    margin: 0 0 5px;
+
+    flex-shrink: 0;
+
+    transition: width 0.4s ease;
+}
+
+.small-cat {
+    width: 155px;
+}
+
+.question-cat {
+    width: 155px;
+}
+
+.final-cat {
+    width: 200px;
+}
+
+
+/* =========================
+   TEXTO
 ========================= */
 
 .letter-text {
-    width: 92%;
+    width: 94%;
     max-width: 650px;
 
-    font-size: clamp(15px, 2vw, 18px);
-    line-height: 1.5;
-
-    margin-bottom: 10px;
+    font-size: clamp(14px, 1.7vw, 17px);
+    line-height: 1.45;
 
     overflow-y: auto;
     overflow-x: hidden;
 
     padding: 2px 12px 5px 5px;
+
+    margin-bottom: 8px;
 
     flex: 1;
 
@@ -209,37 +261,7 @@ h1 {
 }
 
 .letter-text p {
-    margin: 10px 0;
-}
-
-
-/* =========================
-   GATITOS
-========================= */
-
-.cat {
-    width: 165px;
-    max-width: 42vw;
-
-    margin-top: 13px;
-    margin-bottom: 2px;
-
-    flex-shrink: 0;
-}
-
-.small-cat {
-    width: 130px;
-    margin-top: 13px;
-}
-
-.question-cat {
-    width: 130px;
-    margin-top: 13px;
-}
-
-.final-cat {
-    width: 165px;
-    margin-top: 13px;
+    margin: 8px 0;
 }
 
 
@@ -250,9 +272,10 @@ h1 {
 .next-btn {
     border: none;
 
-    padding: 11px 21px;
-    margin-top: 7px;
-    margin-bottom: 2px;
+    padding: 10px 20px;
+
+    margin-top: 5px;
+    margin-bottom: 0;
 
     border-radius: 15px;
 
@@ -260,7 +283,7 @@ h1 {
     color: #4d3038;
 
     font-family: inherit;
-    font-size: 17px;
+    font-size: 16px;
 
     cursor: pointer;
 
@@ -278,13 +301,13 @@ h1 {
 
 
 /* =========================
-   PREGUNTA FINAL
+   PREGUNTA
 ========================= */
 
 .question {
-    font-size: clamp(24px, 4.5vw, 35px);
+    font-size: clamp(24px, 4vw, 34px);
 
-    margin: 8px 0 18px;
+    margin: 8px 0 15px;
 
     flex-shrink: 0;
 }
@@ -306,9 +329,10 @@ h1 {
     position: relative;
 
     width: 100%;
-    height: 80px;
+    height: 75px;
 
     display: flex;
+
     justify-content: center;
     align-items: center;
 
@@ -320,12 +344,12 @@ h1 {
 .choice {
     border: none;
 
-    padding: 11px 26px;
+    padding: 10px 25px;
 
     border-radius: 15px;
 
     font-family: inherit;
-    font-size: 19px;
+    font-size: 18px;
 
     cursor: pointer;
 
@@ -337,6 +361,9 @@ h1 {
 .yes-btn {
     background: #f4a9bd;
     color: #4d3038;
+
+    position: relative;
+    z-index: 2;
 }
 
 .yes-btn:hover {
@@ -349,8 +376,11 @@ h1 {
     color: #555;
 
     position: relative;
+    z-index: 1;
 
-    transition: transform 0.2s ease;
+    transition: transform 0.15s ease;
+
+    cursor: default;
 }
 
 
@@ -359,10 +389,11 @@ h1 {
 ========================= */
 
 .final-message {
-    font-size: clamp(17px, 2.5vw, 22px);
-    line-height: 1.5;
-
+    width: 94%;
     max-width: 560px;
+
+    font-size: clamp(16px, 2vw, 21px);
+    line-height: 1.45;
 
     overflow-y: auto;
 
@@ -386,7 +417,7 @@ h1 {
 }
 
 .final-message p {
-    margin: 10px;
+    margin: 9px;
 }
 
 .little-heart {
@@ -404,8 +435,11 @@ h1 {
         overflow: hidden;
     }
 
+    /* SOBRE */
+
     #envelope-container {
         max-width: 90vw;
+        padding: 15px;
     }
 
     #envelope {
@@ -420,18 +454,41 @@ h1 {
         font-size: 14px;
     }
 
-    .letter-window {
-        width: 95vw;
-        height: 87vh;
 
-        padding: 60px 25px 30px;
+    /* CARTA */
 
-        background-size: 100% 100%;
+    #letter-container {
+        padding: 8px;
     }
 
+    .letter-window {
+        /*
+           En celular la hacemos cuadrada,
+           pero un poco más grande para que
+           el texto siga siendo legible.
+        */
+
+        width: 94vw;
+        height: 94vw;
+
+        max-height: 94vh;
+
+        aspect-ratio: 1 / 1;
+
+        /*
+           Este es el equivalente al
+           padding-top: 180px del original.
+        */
+
+        padding: 115px 22px 22px;
+    }
+
+
+    /* GATITO */
+
     .cat {
-        width: 125px;
-        margin-top: 12px;
+        width: 130px;
+        margin-bottom: 3px;
     }
 
     .small-cat {
@@ -442,39 +499,111 @@ h1 {
         width: 100px;
     }
 
+    .final-cat {
+        width: 130px;
+    }
+
+
+    /* TÍTULO */
+
+    h1 {
+        font-size: 24px;
+        margin-bottom: 7px;
+    }
+
+
+    /* TEXTO */
+
     .letter-text {
         width: 96%;
 
-        font-size: 14px;
-        line-height: 1.42;
+        font-size: 13px;
+        line-height: 1.4;
 
         padding-right: 8px;
     }
 
     .letter-text p {
-        margin: 7px 0;
+        margin: 6px 0;
     }
 
-    h1 {
-        font-size: 26px;
-        margin-bottom: 9px;
-    }
+
+    /* BOTÓN */
 
     .next-btn {
-        font-size: 15px;
-        padding: 9px 15px;
+        font-size: 14px;
+        padding: 8px 13px;
     }
 
+
+    /* PREGUNTA */
+
     .question {
-        font-size: 26px;
+        font-size: 24px;
+        margin: 7px 0 12px;
+    }
+
+
+    /* SÍ / NO */
+
+    .buttons {
+        height: 65px;
+        gap: 18px;
     }
 
     .choice {
-        font-size: 16px;
-        padding: 9px 21px;
+        font-size: 15px;
+        padding: 8px 19px;
     }
 
+
+    /* FINAL */
+
     .final-message {
-        font-size: 16px;
+        width: 96%;
+        font-size: 15px;
+        line-height: 1.4;
+    }
+}
+
+
+/* =========================
+   CELULARES MUY CHIQUITOS
+========================= */
+
+@media (max-width: 380px) {
+
+    .letter-window {
+        width: 94vw;
+        height: 94vw;
+
+        padding: 100px 18px 18px;
+    }
+
+    .cat {
+        width: 115px;
+    }
+
+    .small-cat,
+    .question-cat {
+        width: 90px;
+    }
+
+    .final-cat {
+        width: 115px;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    .letter-text {
+        font-size: 12px;
+        line-height: 1.35;
+    }
+
+    .next-btn {
+        font-size: 13px;
+        padding: 7px 11px;
     }
 }
