@@ -1,22 +1,18 @@
-/* =========================
-   ELEMENTOS
-========================= */
-
 const envelope = document.getElementById("envelope-container");
 const letter = document.getElementById("letter-container");
 const letterWindow = document.querySelector(".letter-window");
 
 const pages = document.querySelectorAll(".page");
-
 const noBtn = document.getElementById("no-btn");
+
+let currentPage = 0;
 
 
 /* =========================
-   ABRIR SOBRE
+   ABRIR EL SOBRE
 ========================= */
 
 envelope.addEventListener("click", () => {
-
     envelope.style.display = "none";
 
     letter.style.display = "flex";
@@ -24,7 +20,6 @@ envelope.addEventListener("click", () => {
     setTimeout(() => {
         letterWindow.classList.add("open");
     }, 50);
-
 });
 
 
@@ -32,16 +27,16 @@ envelope.addEventListener("click", () => {
    CAMBIAR DE PÁGINA
 ========================= */
 
-let currentPage = 0;
-
 function nextPage() {
+    if (currentPage >= pages.length - 2) {
+        return;
+    }
 
     pages[currentPage].classList.remove("active");
 
     currentPage++;
 
     pages[currentPage].classList.add("active");
-
 }
 
 
@@ -50,7 +45,6 @@ function nextPage() {
 ========================= */
 
 function moveNoButton() {
-
     const maxX = 120;
     const maxY = 70;
 
@@ -58,42 +52,27 @@ function moveNoButton() {
     const y = Math.random() * (maxY * 2) - maxY;
 
     noBtn.style.transform = `translate(${x}px, ${y}px)`;
-
 }
 
 
-/*
-   PC:
-   cuando el mouse se acerca, escapa.
-*/
+/* Cuando intenta acercarse */
 
 noBtn.addEventListener("mouseenter", moveNoButton);
 
 
-/*
-   CELULAR:
-   cuando intenta tocarlo, también escapa.
-*/
+/* En celular */
 
 noBtn.addEventListener("touchstart", (event) => {
-
     event.preventDefault();
-
     moveNoButton();
-
 });
 
 
-/*
-   Por si logra hacer click de alguna manera.
-*/
+/* Por si consigue hacer click */
 
 noBtn.addEventListener("click", (event) => {
-
     event.preventDefault();
-
     moveNoButton();
-
 });
 
 
@@ -102,11 +81,9 @@ noBtn.addEventListener("click", (event) => {
 ========================= */
 
 function sayYes() {
-
     pages[currentPage].classList.remove("active");
 
     const finalPage = document.getElementById("final-page");
 
     finalPage.classList.add("active");
-
 }
