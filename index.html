@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>una cartita para véra ♡</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- SOBRE -->
+    <div id="envelope-container">
+        <img src="envelope.png" alt="Sobre" id="envelope">
+        <p>♡ una cartita para vos ♡</p>
+        <small>tocá el sobre para abrirla</small>
+    </div>
+
+
+    <!-- CARTA -->
+    <div id="letter-container">
+
+        <div class="letter-window">
+
+            <!-- PARTE 1 -->
+            <section class="page active" id="page-1">
+
+                <img src="cat_heart.gif" class="cat">
+
+                <h1>para véra ♡</h1>
+
+                <div class="letter-text">
+                    <p>
+                        querido véra,
+                    </p>
+
+                    <p>
+                        quería dejarte unas palabritas escritas en algún
+                        rincón que pudiera llegar hasta vos, porque hay
+                        cosas que me cuesta decir sin que se me escape
+                        una sonrisa antes de terminar la frase.
+                    </p>
+
+                    <p>
+                        desde que llegaste a mi vida hay días que se
+                        sienten un poquito más bonitos, y yo quería
+                        guardar aunque fuera una pequeña parte de todo
+                        eso acá.
+                    </p>
+                </div>
+
+                <button class="next-btn" onclick="nextPage()">
+                    seguir leyendo ♡
+                </button>
+
+            </section>
+
+
+            <!-- PARTE 2 -->
+            <section class="page" id="page-2">
+
+                <img src="cat_heart.gif" class="cat small-cat">
+
+                <h1>una cosita más...</h1>
+
+                <div class="letter-text">
+
+                    <p>
+                        me gusta compartir mis días con vos, incluso
+                        aquellos que no tienen nada extraordinario,
+                        porque de alguna manera terminan teniendo algo
+                        especial cuando estás conmigo.
+                    </p>
+
+                    <p>
+                        me gusta cuidarte, escucharte, molestarte un
+                        poquito, darte besitos y tenerte cerquita.
+                        me gusta saber que puedo encontrarte al final
+                        del día y sentir que estoy en casa.
+                    </p>
+
+                    <p>
+                        y después de darle muchas vueltas a todo esto,
+                        pensé que había una pregunta que quería hacerte.
+                    </p>
+
+                </div>
+
+                <button class="next-btn" onclick="nextPage()">
+                    hay una última página... ♡
+                </button>
+
+            </section>
+
+
+            <!-- PARTE 3 -->
+            <section class="page" id="page-3">
+
+                <img src="cat_heart.gif" class="cat small-cat">
+
+                <h1>véra...</h1>
+
+                <div class="question">
+                    <p>
+                        ¿querés ser mi novio?
+                    </p>
+
+                    <span>♡</span>
+                </div>
+
+                <div class="buttons" id="letter-buttons">
+
+                    <button class="choice yes-btn" onclick="sayYes()">
+                        sí ♡
+                    </button>
+
+                    <button class="choice no-btn" id="no-btn">
+                        no
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- FINAL -->
+            <section class="page" id="final-page">
+
+                <img src="cat_dance.gif" class="cat">
+
+                <h1>♡ sí ♡</h1>
+
+                <div class="final-message">
+
+                    <p>
+                        me has hecho el hombre más feliz del mundo.
+                    </p>
+
+                    <p>
+                        te quiero muchísimo, véra.
+                    </p>
+
+                    <p class="little-heart">
+                        ♡ ♡ ♡
+                    </p>
+
+                </div>
+
+            </section>
+
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
