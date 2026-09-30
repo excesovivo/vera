@@ -14,7 +14,6 @@ let currentPage = 0;
 
 envelope.addEventListener("click", () => {
     envelope.style.display = "none";
-
     letter.style.display = "flex";
 
     setTimeout(() => {
@@ -45,22 +44,26 @@ function nextPage() {
 ========================= */
 
 function moveNoButton() {
-    const maxX = 120;
-    const maxY = 70;
+    const min = 100;
+    const max = 160;
 
-    const x = Math.random() * (maxX * 2) - maxX;
-    const y = Math.random() * (maxY * 2) - maxY;
+    const distance = Math.random() * (max - min) + min;
+    const angle = Math.random() * Math.PI * 2;
 
-    noBtn.style.transform = `translate(${x}px, ${y}px)`;
+    const moveX = Math.cos(angle) * distance;
+    const moveY = Math.sin(angle) * distance;
+
+    noBtn.style.transition = "transform 0.2s ease";
+    noBtn.style.transform = `translate(${moveX}px, ${moveY}px)`;
 }
 
 
-/* Cuando intenta acercarse */
+/* PC */
 
 noBtn.addEventListener("mouseenter", moveNoButton);
 
 
-/* En celular */
+/* CELULAR */
 
 noBtn.addEventListener("touchstart", (event) => {
     event.preventDefault();
@@ -68,7 +71,7 @@ noBtn.addEventListener("touchstart", (event) => {
 });
 
 
-/* Por si consigue hacer click */
+/* POR SI CONSIGUE TOCARLO */
 
 noBtn.addEventListener("click", (event) => {
     event.preventDefault();
