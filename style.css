@@ -554,6 +554,8 @@ h1 {
 
     padding: 0 10px 5px;
 
+    margin-bottom: 50px;
+
     scrollbar-width: thin;
 
     scrollbar-color:
@@ -683,7 +685,7 @@ h1 {
     }
 
     .small-window .final-cat {
-        width: 85px;
+        width: 75px;
 
         margin: -18px 0 4px;
     }
