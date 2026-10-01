@@ -570,6 +570,7 @@ h1 {
 
     /* =========================
        VENTANA GRANDE
+       PÁGINAS 1, 2 Y 3
     ========================= */
 
     .large-window {
@@ -577,10 +578,10 @@ h1 {
 
         aspect-ratio: 3000 / 4000;
 
-        padding-top: 10%;
-        padding-right: 4%;
-        padding-bottom: 4%;
-        padding-left: 4%;
+        padding-top: 14%;
+        padding-right: 5.5%;
+        padding-bottom: 5%;
+        padding-left: 5.5%;
     }
 
 
@@ -607,13 +608,13 @@ h1 {
     .large-window .cat {
         width: 105px;
 
-        margin: -30px 0 -10px;
+        margin: 5px 0 -5px;
     }
 
     .large-window .small-cat {
         width: 90px;
 
-        margin: -25px 0 -8px;
+        margin: 5px 0 -5px;
     }
 
     .small-window .question-cat {
@@ -644,7 +645,7 @@ h1 {
     ========================= */
 
     .letter-text {
-        width: calc(100% + 6px);
+        width: calc(100% - 8px);
 
         flex: 1 1 auto;
         min-height: 0;
@@ -653,9 +654,9 @@ h1 {
 
         line-height: 1.45;
 
-        padding: 0 1px 6px;
+        padding: 0 2px 10px;
 
-        margin: 0;
+        margin: 5px 0 0;
     }
 
     .letter-text p {
@@ -726,10 +727,10 @@ h1 {
 
         aspect-ratio: 3000 / 4000;
 
-        padding-top: 10%;
-        padding-right: 3.5%;
-        padding-bottom: 4%;
-        padding-left: 3.5%;
+        padding-top: 14%;
+        padding-right: 5%;
+        padding-bottom: 5%;
+        padding-left: 5%;
     }
 
     .small-window {
@@ -751,13 +752,13 @@ h1 {
     .large-window .cat {
         width: 95px;
 
-        margin: -25px 0 -8px;
+        margin: 3px 0 -4px;
     }
 
     .large-window .small-cat {
         width: 82px;
 
-        margin: -22px 0 -7px;
+        margin: 3px 0 -4px;
     }
 
     .small-window .question-cat {
@@ -783,13 +784,15 @@ h1 {
     ========================= */
 
     .letter-text {
-        width: calc(100% + 5px);
+        width: calc(100% - 7px);
 
         font-size: 13px;
 
         line-height: 1.4;
 
-        padding: 0 1px 5px;
+        padding: 0 2px 8px;
+
+        margin: 5px 0 0;
     }
 
 
