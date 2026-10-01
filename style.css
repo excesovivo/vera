@@ -305,17 +305,10 @@ h1 {
 ========================= */
 
 .letter-text {
-    /*
-       Un poquito más ancho que antes.
-    */
     width: calc(100% + 8px);
 
     max-width: none;
 
-    /*
-       Ocupa todo el espacio disponible
-       hasta el botón.
-    */
     flex: 1 1 auto;
 
     min-height: 0;
@@ -327,13 +320,9 @@ h1 {
     overflow-y: auto;
     overflow-x: hidden;
 
-    /*
-       Muy poco espacio lateral para
-       aprovechar mejor el ancho.
-    */
     padding: 0 2px 8px;
 
-    margin: 0;
+    margin: 18px 0 0;
 
     text-align: center;
 
