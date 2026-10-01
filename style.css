@@ -10,7 +10,6 @@ body {
 
 body {
     margin: 0;
-
     min-height: 100vh;
 
     display: flex;
@@ -35,13 +34,11 @@ body {
 
 #envelope-container {
     text-align: center;
-
     cursor: pointer;
 
     animation: fadeIn 0.8s ease;
 
     max-width: 500px;
-
     padding: 20px;
 }
 
@@ -142,8 +139,6 @@ body {
     align-items: center;
 
     padding: 0;
-
-    overflow: hidden;
 }
 
 
@@ -154,12 +149,15 @@ body {
 .letter-window {
     position: relative;
 
+    margin: 0 auto;
+
     flex-shrink: 0;
 
     display: flex;
 
     flex-direction: column;
 
+    justify-content: flex-start;
     align-items: center;
 
     text-align: center;
@@ -173,8 +171,6 @@ body {
     opacity: 0;
 
     transition: opacity 0.5s ease;
-
-    overflow: hidden;
 }
 
 .letter-window.open {
@@ -189,11 +185,6 @@ body {
 
 .large-window {
 
-    /*
-       La imagen conserva exactamente
-       su proporción original.
-    */
-
     width: min(75vw, 67.5vh, 750px);
 
     aspect-ratio: 3000 / 4000;
@@ -201,15 +192,9 @@ body {
     background-image: url("window-large.png");
 
     /*
-       Zona de escritura del PNG:
-
-       X:
-       200 / 3000 = 6.67%
-       2790 / 3000 = 93%
-
-       Y:
-       852 / 4000 = 21.3%
-       3793 / 4000 = 94.8%
+       Dejamos el padding como estaba,
+       porque este sistema sí funciona
+       con tu estructura actual.
     */
 
     padding-top: 21.3%;
@@ -227,8 +212,9 @@ body {
 .small-window {
 
     /*
-       No aparece hasta llegar
-       a la pregunta.
+       MUY IMPORTANTE:
+       la ventana chica no participa
+       del layout hasta que JS la muestra.
     */
 
     display: none;
@@ -238,18 +224,6 @@ body {
     aspect-ratio: 4845 / 4435;
 
     background-image: url("window.png");
-
-    /*
-       Zona de escritura del PNG:
-
-       X:
-       325 / 4845 = 6.7%
-       4505 / 4845 = 93%
-
-       Y:
-       1400 / 4435 = 31.6%
-       4080 / 4435 = 92%
-    */
 
     padding-top: 31.6%;
     padding-right: 7%;
@@ -265,22 +239,13 @@ body {
 .page {
 
     width: 100%;
-
-    /*
-       Importante:
-       no usamos height: 100% porque
-       el padding de la ventana ya
-       define el área disponible.
-    */
-
-    min-height: 0;
-
-    flex: 1;
+    height: 100%;
 
     display: none;
 
     flex-direction: column;
 
+    justify-content: flex-start;
     align-items: center;
 
     text-align: center;
@@ -344,16 +309,7 @@ h1 {
 .letter-text {
 
     width: 100%;
-
-    min-width: 0;
-    min-height: 0;
-
-    /*
-       Ocupa todo el espacio que queda
-       entre el gatito/título y el botón.
-    */
-
-    flex: 1;
+    max-width: 100%;
 
     font-size: clamp(15px, 1.55vw, 18px);
 
@@ -364,7 +320,9 @@ h1 {
 
     padding: 2px 10px 5px;
 
-    margin: 0 0 8px;
+    margin-bottom: 8px;
+
+    flex: 1;
 
     scrollbar-width: thin;
 
@@ -539,10 +497,6 @@ h1 {
 
     max-width: 560px;
 
-    min-height: 0;
-
-    flex: 1;
-
     font-size: clamp(16px, 2vw, 21px);
 
     line-height: 1.45;
@@ -593,9 +547,7 @@ h1 {
     }
 
 
-    /* =========================
-       SOBRE
-    ========================= */
+    /* SOBRE */
 
     #envelope-container {
 
@@ -617,9 +569,7 @@ h1 {
     }
 
 
-    /* =========================
-       CONTENEDOR
-    ========================= */
+    /* CONTENEDOR */
 
     #letter-container {
         padding: 0;
@@ -627,7 +577,7 @@ h1 {
 
 
     /* =========================
-       VENTANA GRANDE
+       GRANDE
     ========================= */
 
     .large-window {
@@ -644,7 +594,7 @@ h1 {
 
 
     /* =========================
-       VENTANA CHICA
+       CHICA
     ========================= */
 
     .small-window {
@@ -660,9 +610,7 @@ h1 {
     }
 
 
-    /* =========================
-       GATITOS
-    ========================= */
+    /* GATITOS */
 
     .large-window .cat {
 
@@ -685,9 +633,7 @@ h1 {
     }
 
 
-    /* =========================
-       TÍTULOS
-    ========================= */
+    /* TÍTULOS */
 
     h1 {
 
@@ -697,24 +643,17 @@ h1 {
     }
 
 
-    /* =========================
-       CARTA
-    ========================= */
+    /* CARTA */
 
     .letter-text {
 
         width: 100%;
 
-        min-width: 0;
-        min-height: 0;
-
         font-size: 13px;
 
         line-height: 1.4;
 
-        padding-top: 2px;
         padding-right: 7px;
-        padding-bottom: 5px;
         padding-left: 3px;
     }
 
@@ -723,9 +662,7 @@ h1 {
     }
 
 
-    /* =========================
-       BOTÓN
-    ========================= */
+    /* BOTÓN */
 
     .next-btn {
 
@@ -735,9 +672,7 @@ h1 {
     }
 
 
-    /* =========================
-       PREGUNTA
-    ========================= */
+    /* PREGUNTA */
 
     .question {
 
@@ -761,15 +696,11 @@ h1 {
     }
 
 
-    /* =========================
-       FINAL
-    ========================= */
+    /* FINAL */
 
     .final-message {
 
         width: 96%;
-
-        min-height: 0;
 
         font-size: 15px;
 
@@ -808,9 +739,6 @@ h1 {
         padding-left: 6.7%;
     }
 
-
-    /* GATITOS */
-
     .large-window .cat {
         width: 110px;
     }
@@ -827,15 +755,9 @@ h1 {
         width: 110px;
     }
 
-
-    /* TÍTULO */
-
     h1 {
         font-size: 21px;
     }
-
-
-    /* CARTA */
 
     .letter-text {
 
@@ -843,9 +765,6 @@ h1 {
 
         line-height: 1.35;
     }
-
-
-    /* BOTÓN */
 
     .next-btn {
 
