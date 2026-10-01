@@ -726,7 +726,7 @@ h1 {
     /* BOTÓN ATRÁS DE LA QUINTA */
 
     #final-page .back-btn {
-        bottom: -55px;
+        bottom: -25px;
 
         transform: translateX(-50%);
     }
@@ -850,6 +850,6 @@ h1 {
     /* BOTÓN FINAL EN CELULARES MUY CHICOS */
 
     #final-page .back-btn {
-        bottom: -55px;
+        bottom: -25px;
     }
 }
