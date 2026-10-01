@@ -519,7 +519,6 @@ h1 {
     transform: translateX(-50%) scale(1.05);
 }
 
-
 /* =========================
    CELULAR
 ========================= */
@@ -723,16 +722,28 @@ h1 {
     }
 
 
-    /* BOTÓN ATRÁS DE LA QUINTA */
+    /* =========================
+       BOTÓN ATRÁS DE LA QUINTA
+    ========================= */
+
+    #final-page {
+        position: relative;
+    }
 
     #final-page .back-btn {
-        bottom: -25px;
+        position: absolute !important;
 
-        transform: translateX(-50%);
+        left: 50% !important;
+        top: auto !important;
+        bottom: 10px !important;
+
+        margin: 0 !important;
+
+        transform: translateX(-50%) !important;
     }
 
     #final-page .back-btn:hover {
-        transform: translateX(-50%) scale(1.05);
+        transform: translateX(-50%) scale(1.05) !important;
     }
 
 }
@@ -846,10 +857,4 @@ h1 {
         gap: 6px;
     }
 
-
-    /* BOTÓN FINAL EN CELULARES MUY CHICOS */
-
-    #final-page .back-btn {
-        bottom: -25px;
-    }
 }
