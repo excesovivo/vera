@@ -578,7 +578,7 @@ h1 {
 
         aspect-ratio: 3000 / 4000;
 
-        padding-top: 29%;
+        padding-top: 27.5%;
         padding-right: 6%;
         padding-bottom: 14%;
         padding-left: 6%;
@@ -654,7 +654,7 @@ h1 {
 
         flex: 0 1 auto;
 
-        height: calc(100% - 145px);
+        height: calc(100% - 135px);
 
         min-height: 0;
 
