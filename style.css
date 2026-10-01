@@ -548,15 +548,9 @@ h1 {
 
     line-height: 1.45;
 
-    height: 180px;
-
     overflow-y: auto;
 
     padding: 0 10px 5px;
-
-    margin-bottom: 20px;
-
-    flex-shrink: 0;
 
     scrollbar-width: thin;
 
@@ -800,6 +794,12 @@ h1 {
 
         margin-bottom: 5px;
     }
+    
+    #final-page .back-btn {
+        transform: translateY(-20px);
+    }
+
+}
 
 
 /* =========================
