@@ -21,7 +21,6 @@ body {
     background-position: center;
 
     font-family: "Pixelify Sans", sans-serif;
-
     color: #4d3038;
 
     overflow: hidden;
@@ -35,42 +34,32 @@ body {
 #envelope-container {
     text-align: center;
     cursor: pointer;
-
     animation: fadeIn 0.8s ease;
-
     max-width: 500px;
     padding: 20px;
 }
 
 #envelope {
     width: 200px;
-
     animation: pulse 1.5s infinite;
-
     cursor: pointer;
 }
 
 #envelope-container p {
     font-size: 28px;
-
     margin: 10px 0 8px;
 }
 
 #envelope-container small {
     display: block;
-
     font-size: 16px;
-
     line-height: 1.4;
-
     opacity: 0.7;
-
     margin-top: 5px;
 }
 
 #envelope-container small + small {
     margin-top: 9px;
-
     opacity: 0.85;
 }
 
@@ -80,7 +69,6 @@ body {
 ========================= */
 
 @keyframes pulse {
-
     0% {
         transform: scale(1);
     }
@@ -95,7 +83,6 @@ body {
 }
 
 @keyframes fadeIn {
-
     from {
         opacity: 0;
         transform: scale(0.9);
@@ -108,7 +95,6 @@ body {
 }
 
 @keyframes pageIn {
-
     from {
         opacity: 0;
         transform: translateX(20px);
@@ -127,17 +113,12 @@ body {
 
 #letter-container {
     display: none;
-
     position: fixed;
-
     inset: 0;
-
     width: 100vw;
     height: 100vh;
-
     justify-content: center;
     align-items: center;
-
     padding: 0;
 }
 
@@ -148,30 +129,18 @@ body {
 
 .letter-window {
     position: relative;
-
     margin: 0 auto;
-
     flex-shrink: 0;
-
     display: flex;
-
     flex-direction: column;
-
     justify-content: flex-start;
     align-items: center;
-
     text-align: center;
-
     background-repeat: no-repeat;
-
     background-position: center;
-
     background-size: 100% 100%;
-
     opacity: 0;
-
     overflow: visible;
-
     transition: opacity 0.5s ease;
 }
 
@@ -182,22 +151,16 @@ body {
 
 /* =========================
    VENTANA GRANDE
-   3000 × 4000
 ========================= */
 
 .large-window {
     width: min(75vw, 67.5vh, 750px);
-
     aspect-ratio: 3000 / 4000;
-
     background-image: url("window-large.png");
 
     padding-top: 14%;
-
     padding-right: 4.5%;
-
     padding-bottom: 4%;
-
     padding-left: 4.5%;
 
     overflow: visible;
@@ -206,16 +169,13 @@ body {
 
 /* =========================
    VENTANA CHICA
-   4845 × 4435
 ========================= */
 
 .small-window {
     display: none;
 
     width: min(92vw, 98vh, 900px);
-
     aspect-ratio: 4845 / 4435;
-
     background-image: url("window.png");
 
     padding-top: 15%;
@@ -236,7 +196,6 @@ body {
     display: none;
 
     flex-direction: column;
-
     justify-content: flex-start;
     align-items: center;
 
@@ -245,7 +204,6 @@ body {
     animation: pageIn 0.5s ease;
 
     overflow: visible;
-
     min-height: 0;
 }
 
@@ -260,9 +218,7 @@ body {
 
 h1 {
     font-size: clamp(24px, 3.5vw, 30px);
-
     margin: 0 0 2px;
-
     flex-shrink: 0;
 }
 
@@ -273,29 +229,23 @@ h1 {
 
 .cat {
     width: 155px;
-
     margin: -40px 0 -15px;
-
     flex-shrink: 0;
-
     transition: width 0.4s ease;
 }
 
 .small-cat {
     width: 125px;
-
     margin: -32px 0 -12px;
 }
 
 .question-cat {
     width: 150px;
-
     margin: 20px 0 6px;
 }
 
 .final-cat {
     width: 165px;
-
     margin: 8px 0 6px;
 }
 
@@ -306,31 +256,24 @@ h1 {
 
 .letter-text {
     width: calc(100% + 8px);
-
     max-width: none;
 
     flex: 1 1 auto;
-
     min-height: 0;
 
     font-size: clamp(16px, 1.65vw, 19px);
-
     line-height: 1.48;
 
     overflow-y: auto;
     overflow-x: hidden;
 
     padding: 0 2px 8px;
-
     margin: 0;
 
     text-align: center;
 
     scrollbar-width: thin;
-
-    scrollbar-color:
-        #e9a9bb
-        transparent;
+    scrollbar-color: #e9a9bb transparent;
 }
 
 .letter-text::-webkit-scrollbar {
@@ -343,7 +286,6 @@ h1 {
 
 .letter-text::-webkit-scrollbar-thumb {
     background: #e9a9bb;
-
     border-radius: 10px;
 }
 
@@ -360,22 +302,18 @@ h1 {
     border: none;
 
     padding: 10px 20px;
-
     margin-top: 5px;
     margin-bottom: 0;
 
     border-radius: 15px;
 
     background: #f4b8c8;
-
     color: #4d3038;
 
     font-family: inherit;
-
     font-size: 16px;
 
     cursor: pointer;
-
     flex-shrink: 0;
 
     transition:
@@ -385,7 +323,6 @@ h1 {
 
 .next-btn:hover {
     transform: scale(1.05);
-
     background: #efa5ba;
 }
 
@@ -396,13 +333,10 @@ h1 {
 
 .page-buttons {
     display: flex;
-
     justify-content: center;
-
     align-items: center;
 
     gap: 10px;
-
     flex-shrink: 0;
 }
 
@@ -410,22 +344,18 @@ h1 {
     border: none;
 
     padding: 10px 20px;
-
     margin-top: 5px;
     margin-bottom: 0;
 
     border-radius: 15px;
 
     background: #f4b8c8;
-
     color: #4d3038;
 
     font-family: inherit;
-
     font-size: 16px;
 
     cursor: pointer;
-
     flex-shrink: 0;
 
     transition:
@@ -435,17 +365,7 @@ h1 {
 
 .back-btn:hover {
     transform: scale(1.05);
-
     background: #efa5ba;
-}
-
-
-/* =========================
-   BOTÓN ATRÁS — FINAL PC
-========================= */
-
-#final-page .back-btn {
-    transform: translateY(0);
 }
 
 
@@ -455,9 +375,7 @@ h1 {
 
 .question {
     font-size: clamp(24px, 4vw, 34px);
-
     margin: 8px 0 15px;
-
     flex-shrink: 0;
 }
 
@@ -478,11 +396,9 @@ h1 {
     position: relative;
 
     width: 100%;
-
     height: 75px;
 
     display: flex;
-
     justify-content: center;
     align-items: center;
 
@@ -495,11 +411,9 @@ h1 {
     border: none;
 
     padding: 10px 25px;
-
     border-radius: 15px;
 
     font-family: inherit;
-
     font-size: 18px;
 
     cursor: pointer;
@@ -511,27 +425,22 @@ h1 {
 
 .yes-btn {
     background: #f4a9bd;
-
     color: #4d3038;
 
     position: relative;
-
     z-index: 2;
 }
 
 .yes-btn:hover {
     transform: scale(1.1);
-
     background: #ef91ad;
 }
 
 .no-btn {
     background: #ddd;
-
     color: #555;
 
     position: relative;
-
     z-index: 1;
 
     transition: transform 0.15s ease;
@@ -546,28 +455,22 @@ h1 {
 
 .final-message {
     width: 94%;
-
     max-width: 700px;
 
     height: 210px;
 
     font-size: clamp(16px, 2vw, 21px);
-
     line-height: 1.45;
 
     overflow-y: auto;
 
     padding: 0 10px 5px;
-
     margin-bottom: 5px;
 
     flex-shrink: 0;
 
     scrollbar-width: thin;
-
-    scrollbar-color:
-        #e9a9bb
-        transparent;
+    scrollbar-color: #e9a9bb transparent;
 }
 
 .final-message::-webkit-scrollbar {
@@ -580,7 +483,6 @@ h1 {
 
 .final-message::-webkit-scrollbar-thumb {
     background: #e9a9bb;
-
     border-radius: 10px;
 }
 
@@ -590,6 +492,31 @@ h1 {
 
 .little-heart {
     font-size: 28px;
+}
+
+
+/* ==================================================
+   QUINTA PÁGINA — BOTÓN ATRÁS EN PC
+================================================== */
+
+#final-page {
+    position: relative;
+}
+
+#final-page .back-btn {
+    position: absolute;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    bottom: 0;
+
+    margin: 0;
+}
+
+#final-page .back-btn:hover {
+    transform: translateX(-50%) scale(1.05);
 }
 
 
@@ -633,7 +560,6 @@ h1 {
 
     /* =========================
        VENTANA GRANDE
-       PÁGINAS 1, 2 Y 3
     ========================= */
 
     .large-window {
@@ -675,25 +601,21 @@ h1 {
 
     .large-window .cat {
         width: 105px;
-
         margin: 0 0 4px;
     }
 
     .large-window .small-cat {
         width: 90px;
-
         margin: 0 0 4px;
     }
 
     .small-window .question-cat {
         width: 100px;
-
         margin: -18px 0 4px;
     }
 
     .small-window .final-cat {
         width: 80px;
-
         margin: -18px 0 4px;
     }
 
@@ -704,7 +626,6 @@ h1 {
 
     h1 {
         font-size: 21px;
-
         margin-bottom: 2px;
     }
 
@@ -723,11 +644,9 @@ h1 {
         min-height: 0;
 
         font-size: 14px;
-
         line-height: 1.45;
 
         padding: 0 2px 4px;
-
         margin: 8px 0 0;
     }
 
@@ -772,8 +691,7 @@ h1 {
 
     .question {
         font-size: 20px;
-
-        margin: 0px 0 5px;
+        margin: 0 0 5px;
     }
 
     .question span {
@@ -782,13 +700,11 @@ h1 {
 
     .buttons {
         height: 65px;
-
         gap: 18px;
     }
 
     .choice {
         font-size: 15px;
-
         padding: 8px 19px;
     }
 
@@ -801,14 +717,22 @@ h1 {
         width: 96%;
 
         font-size: 15px;
-
         line-height: 1.4;
 
         margin-bottom: 5px;
     }
 
+
+    /* BOTÓN ATRÁS DE LA QUINTA */
+
     #final-page .back-btn {
-        transform: translateY(-80px);
+        bottom: -55px;
+
+        transform: translateX(-50%);
+    }
+
+    #final-page .back-btn:hover {
+        transform: translateX(-50%) scale(1.05);
     }
 
 }
@@ -855,13 +779,11 @@ h1 {
 
     .large-window .cat {
         width: 95px;
-
         margin: 0 0 3px;
     }
 
     .large-window .small-cat {
         width: 82px;
-
         margin: 0 0 3px;
     }
 
@@ -893,11 +815,9 @@ h1 {
         height: calc(100% - 110px);
 
         font-size: 13px;
-
         line-height: 1.4;
 
         padding: 0 2px 4px;
-
         margin: 6px 0 0;
     }
 
@@ -924,5 +844,12 @@ h1 {
 
     .page-buttons {
         gap: 6px;
+    }
+
+
+    /* BOTÓN FINAL EN CELULARES MUY CHICOS */
+
+    #final-page .back-btn {
+        bottom: -55px;
     }
 }
