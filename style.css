@@ -190,18 +190,13 @@ body {
 
     background-image: url("window-large.png");
 
-    /*
-       MUY ARRIBA:
-       dejamos mucho más espacio
-       para el contenido de la carta.
-    */
     padding-top: 10%;
 
-    padding-right: 5%;
+    padding-right: 4.5%;
 
     padding-bottom: 4%;
 
-    padding-left: 5%;
+    padding-left: 4.5%;
 }
 
 
@@ -276,9 +271,10 @@ h1 {
     width: 155px;
 
     /*
-       SUBIMOS MUCHO EL GATITO.
+       Un poquito más abajo para
+       que se vean bien los ojitos.
     */
-    margin: -55px 0 -18px;
+    margin: -40px 0 -15px;
 
     flex-shrink: 0;
 
@@ -288,7 +284,7 @@ h1 {
 .small-cat {
     width: 125px;
 
-    margin: -45px 0 -15px;
+    margin: -32px 0 -12px;
 }
 
 .question-cat {
@@ -310,16 +306,15 @@ h1 {
 
 .letter-text {
     /*
-       MÁS ANCHO:
-       aprovechamos casi todo el
-       ancho interior de la ventana.
+       Un poquito más ancho que antes.
     */
-    width: 100%;
+    width: calc(100% + 8px);
+
     max-width: none;
 
     /*
-       OCUPA TODO EL ESPACIO
-       DISPONIBLE HASTA EL BOTÓN.
+       Ocupa todo el espacio disponible
+       hasta el botón.
     */
     flex: 1 1 auto;
 
@@ -333,11 +328,10 @@ h1 {
     overflow-x: hidden;
 
     /*
-       Casi nada de margen lateral
-       para que entren más palabras
-       por línea.
+       Muy poco espacio lateral para
+       aprovechar mejor el ancho.
     */
-    padding: 0 4px 8px;
+    padding: 0 2px 8px;
 
     margin: 0;
 
@@ -595,11 +589,11 @@ h1 {
 
         padding-top: 10%;
 
-        padding-right: 4.5%;
+        padding-right: 4%;
 
         padding-bottom: 4%;
 
-        padding-left: 4.5%;
+        padding-left: 4%;
     }
 
 
@@ -629,13 +623,13 @@ h1 {
     .large-window .cat {
         width: 105px;
 
-        margin: -40px 0 -12px;
+        margin: -30px 0 -10px;
     }
 
     .large-window .small-cat {
         width: 90px;
 
-        margin: -32px 0 -10px;
+        margin: -25px 0 -8px;
     }
 
     .small-window .question-cat {
@@ -667,7 +661,7 @@ h1 {
     ========================= */
 
     .letter-text {
-        width: 100%;
+        width: calc(100% + 6px);
 
         flex: 1 1 auto;
 
@@ -677,7 +671,7 @@ h1 {
 
         line-height: 1.4;
 
-        padding: 0 2px 6px;
+        padding: 0 1px 6px;
 
         margin: 0;
     }
@@ -748,11 +742,11 @@ h1 {
 
         padding-top: 10%;
 
-        padding-right: 4%;
+        padding-right: 3.5%;
 
         padding-bottom: 4%;
 
-        padding-left: 4%;
+        padding-left: 3.5%;
     }
 
     .small-window {
@@ -775,13 +769,13 @@ h1 {
     .large-window .cat {
         width: 95px;
 
-        margin: -34px 0 -10px;
+        margin: -25px 0 -8px;
     }
 
     .large-window .small-cat {
         width: 82px;
 
-        margin: -28px 0 -8px;
+        margin: -22px 0 -7px;
     }
 
     .small-window .question-cat {
@@ -803,13 +797,13 @@ h1 {
     /* CARTA */
 
     .letter-text {
-        width: 100%;
+        width: calc(100% + 5px);
 
         font-size: 12px;
 
         line-height: 1.35;
 
-        padding: 0 2px 5px;
+        padding: 0 1px 5px;
     }
 
 
