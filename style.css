@@ -548,7 +548,7 @@ h1 {
 
     line-height: 1.45;
 
-    height: 80px;
+    height: 120px;
 
     overflow-y: auto;
 
@@ -683,7 +683,7 @@ h1 {
     }
 
     .small-window .final-cat {
-        width: 100px;
+        width: 85px;
 
         margin: -18px 0 4px;
     }
