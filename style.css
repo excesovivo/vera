@@ -2,17 +2,29 @@
     box-sizing: border-box;
 }
 
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
 body {
     margin: 0;
+
     min-height: 100vh;
+
     display: flex;
     justify-content: center;
     align-items: center;
+
     background-image: url("heart-bg.jpg");
     background-size: cover;
     background-position: center;
+
     font-family: "Pixelify Sans", sans-serif;
+
     color: #4d3038;
+
     overflow: hidden;
 }
 
@@ -23,33 +35,45 @@ body {
 
 #envelope-container {
     text-align: center;
+
     cursor: pointer;
+
     animation: fadeIn 0.8s ease;
+
     max-width: 500px;
+
     padding: 20px;
 }
 
 #envelope {
     width: 200px;
+
     animation: pulse 1.5s infinite;
+
     cursor: pointer;
 }
 
 #envelope-container p {
     font-size: 28px;
+
     margin: 10px 0 8px;
 }
 
 #envelope-container small {
     display: block;
+
     font-size: 16px;
+
     line-height: 1.4;
+
     opacity: 0.7;
+
     margin-top: 5px;
 }
 
 #envelope-container small + small {
     margin-top: 9px;
+
     opacity: 0.85;
 }
 
@@ -59,6 +83,7 @@ body {
 ========================= */
 
 @keyframes pulse {
+
     0% {
         transform: scale(1);
     }
@@ -73,25 +98,31 @@ body {
 }
 
 @keyframes fadeIn {
+
     from {
         opacity: 0;
+
         transform: scale(0.9);
     }
 
     to {
         opacity: 1;
+
         transform: scale(1);
     }
 }
 
 @keyframes pageIn {
+
     from {
         opacity: 0;
-        transform: translateX(30px);
+
+        transform: translateX(20px);
     }
 
     to {
         opacity: 1;
+
         transform: translateX(0);
     }
 }
@@ -103,11 +134,18 @@ body {
 
 #letter-container {
     display: none;
+
     position: fixed;
+
     inset: 0;
+
+    width: 100vw;
+    height: 100vh;
+
     justify-content: center;
     align-items: center;
-    padding: 15px;
+
+    padding: 0;
 }
 
 
@@ -118,7 +156,12 @@ body {
 .letter-window {
     position: relative;
 
+    margin: 0 auto;
+
+    flex-shrink: 0;
+
     display: flex;
+
     flex-direction: column;
 
     justify-content: flex-start;
@@ -127,60 +170,120 @@ body {
     text-align: center;
 
     background-repeat: no-repeat;
+
     background-position: center;
+
+    /*
+       La imagen llena exactamente
+       su caja, pero la caja mantiene
+       la proporción original del PNG.
+    */
+
     background-size: 100% 100%;
 
     opacity: 0;
-    transform: scale(1.08);
 
-    transition:
-        transform 0.6s ease,
-        opacity 0.6s ease;
+    /*
+       IMPORTANTE:
+       no hay scale.
+       La ventana aparece a tamaño normal.
+    */
+
+    transform: none;
+
+    transition: opacity 0.5s ease;
 }
 
 .letter-window.open {
     opacity: 1;
-    transform: scale(1);
+
+    transform: none;
 }
 
 
 /* =========================
    VENTANA GRANDE
-   3000 x 4000
+   3000 × 4000
 ========================= */
 
 .large-window {
-    width: min(82vw, 720px);
 
-    aspect-ratio: 3 / 4;
+    /*
+       3000 / 4000 = 0.75
+
+       Limitamos tanto por ancho como
+       por alto para que siempre entre
+       completa en la pantalla.
+    */
+
+    width: min(75vw, 67.5vh, 750px);
+
+    aspect-ratio: 3000 / 4000;
 
     background-image: url("window-large.png");
 
     /*
-       La zona escribible de la imagen empieza
-       aproximadamente en Y 852 / 4000 = 21.3%
+       Zona útil original:
 
-       Por eso dejamos espacio arriba para que
-       el contenido empiece dentro de esa zona.
+       X:
+       200 / 3000 = 6.67%
+       2790 / 3000 = 93%
+
+       Y:
+       852 / 4000 = 21.3%
+       3793 / 4000 = 94.8%
     */
 
-    padding:
-        22% 6.7% 5.2%;
+    padding-top: 21.3%;
+    padding-right: 7%;
+    padding-bottom: 5.2%;
+    padding-left: 6.7%;
 }
 
 
 /* =========================
    VENTANA CHICA
+   4845 × 4435
 ========================= */
 
 .small-window {
-    width: min(90vw, 800px);
 
-    aspect-ratio: 1 / 1;
+    /*
+       ESTA VENTANA NO EXISTE
+       VISUALMENTE HASTA QUE
+       LLEGUEMOS A LA PREGUNTA.
+    */
+
+    display: none;
+
+    /*
+       Proporción exacta:
+
+       4845 / 4435 = 1.0924
+    */
+
+    width: min(92vw, 98vh, 900px);
+
+    aspect-ratio: 4845 / 4435;
 
     background-image: url("window.png");
 
-    padding: 150px 55px 30px;
+    /*
+       Zona útil original:
+
+       X:
+       325 / 4845 = 6.7%
+       4505 / 4845 = 92.98%
+
+       Y:
+       1400 / 4435 = 31.57%
+       4080 / 4435 = 92%
+    */
+
+    padding-top: 31.6%;
+    padding-right: 7%;
+    padding-bottom: 8%;
+    padding-left: 6.7%;
 }
 
 
@@ -189,12 +292,14 @@ body {
 ========================= */
 
 .page {
+
     width: 100%;
     height: 100%;
 
     display: none;
 
     flex-direction: column;
+
     justify-content: flex-start;
     align-items: center;
 
@@ -215,8 +320,11 @@ body {
 ========================= */
 
 h1 {
+
     font-size: clamp(25px, 4vw, 32px);
+
     margin: 0 0 10px;
+
     flex-shrink: 0;
 }
 
@@ -226,6 +334,7 @@ h1 {
 ========================= */
 
 .cat {
+
     width: 190px;
 
     margin: 8px 0 6px;
@@ -253,6 +362,7 @@ h1 {
 ========================= */
 
 .letter-text {
+
     width: 100%;
     max-width: 100%;
 
@@ -270,7 +380,10 @@ h1 {
     flex: 1;
 
     scrollbar-width: thin;
-    scrollbar-color: #e9a9bb transparent;
+
+    scrollbar-color:
+        #e9a9bb
+        transparent;
 }
 
 .letter-text::-webkit-scrollbar {
@@ -283,6 +396,7 @@ h1 {
 
 .letter-text::-webkit-scrollbar-thumb {
     background: #e9a9bb;
+
     border-radius: 10px;
 }
 
@@ -296,6 +410,7 @@ h1 {
 ========================= */
 
 .next-btn {
+
     border: none;
 
     padding: 10px 20px;
@@ -306,9 +421,11 @@ h1 {
     border-radius: 15px;
 
     background: #f4b8c8;
+
     color: #4d3038;
 
     font-family: inherit;
+
     font-size: 16px;
 
     cursor: pointer;
@@ -321,7 +438,9 @@ h1 {
 }
 
 .next-btn:hover {
+
     transform: scale(1.05);
+
     background: #efa5ba;
 }
 
@@ -331,6 +450,7 @@ h1 {
 ========================= */
 
 .question {
+
     font-size: clamp(24px, 4vw, 34px);
 
     margin: 8px 0 15px;
@@ -352,9 +472,11 @@ h1 {
 ========================= */
 
 .buttons {
+
     position: relative;
 
     width: 100%;
+
     height: 75px;
 
     display: flex;
@@ -368,6 +490,7 @@ h1 {
 }
 
 .choice {
+
     border: none;
 
     padding: 10px 25px;
@@ -375,6 +498,7 @@ h1 {
     border-radius: 15px;
 
     font-family: inherit;
+
     font-size: 18px;
 
     cursor: pointer;
@@ -385,23 +509,31 @@ h1 {
 }
 
 .yes-btn {
+
     background: #f4a9bd;
+
     color: #4d3038;
 
     position: relative;
+
     z-index: 2;
 }
 
 .yes-btn:hover {
+
     transform: scale(1.1);
+
     background: #ef91ad;
 }
 
 .no-btn {
+
     background: #ddd;
+
     color: #555;
 
     position: relative;
+
     z-index: 1;
 
     transition: transform 0.15s ease;
@@ -415,7 +547,9 @@ h1 {
 ========================= */
 
 .final-message {
+
     width: 94%;
+
     max-width: 560px;
 
     font-size: clamp(16px, 2vw, 21px);
@@ -427,7 +561,10 @@ h1 {
     padding: 0 10px 5px;
 
     scrollbar-width: thin;
-    scrollbar-color: #e9a9bb transparent;
+
+    scrollbar-color:
+        #e9a9bb
+        transparent;
 }
 
 .final-message::-webkit-scrollbar {
@@ -439,7 +576,9 @@ h1 {
 }
 
 .final-message::-webkit-scrollbar-thumb {
+
     background: #e9a9bb;
+
     border-radius: 10px;
 }
 
@@ -462,8 +601,13 @@ h1 {
         overflow: hidden;
     }
 
+
+    /* SOBRE */
+
     #envelope-container {
+
         max-width: 90vw;
+
         padding: 15px;
     }
 
@@ -479,41 +623,61 @@ h1 {
         font-size: 14px;
     }
 
+
+    /* CONTENEDOR */
+
     #letter-container {
-        padding: 5px;
+        padding: 0;
     }
 
 
-    /* GRANDE */
+    /* =========================
+       GRANDE
+    ========================= */
 
     .large-window {
-        width: 94vw;
 
         /*
-           Se mantiene 3:4.
-           NO se convierte en cuadrado.
-        */
-        aspect-ratio: 3 / 4;
+           Mantiene 3000:4000.
 
-        padding:
-            22% 6.7% 5.2%;
+           El segundo límite hace que
+           nunca sea más alto que la pantalla.
+        */
+
+        width: min(94vw, 68vh);
+
+        aspect-ratio: 3000 / 4000;
+
+        padding-top: 21.3%;
+        padding-right: 7%;
+        padding-bottom: 5.2%;
+        padding-left: 6.7%;
     }
 
 
-    /* CHICA */
+    /* =========================
+       CHICA
+    ========================= */
 
     .small-window {
-        width: 94vw;
-        aspect-ratio: 1 / 1;
 
-        padding: 105px 20px 20px;
+        width: min(94vw, 90vh);
+
+        aspect-ratio: 4845 / 4435;
+
+        padding-top: 31.6%;
+        padding-right: 7%;
+        padding-bottom: 8%;
+        padding-left: 6.7%;
     }
 
 
-    /* GATOS */
+    /* GATITOS */
 
     .large-window .cat {
+
         width: 125px;
+
         margin-top: 4px;
         margin-bottom: 3px;
     }
@@ -534,7 +698,9 @@ h1 {
     /* TÍTULOS */
 
     h1 {
+
         font-size: 23px;
+
         margin-bottom: 6px;
     }
 
@@ -542,6 +708,7 @@ h1 {
     /* CARTA */
 
     .letter-text {
+
         width: 100%;
 
         font-size: 13px;
@@ -560,7 +727,9 @@ h1 {
     /* BOTÓN */
 
     .next-btn {
+
         font-size: 14px;
+
         padding: 8px 13px;
     }
 
@@ -568,17 +737,23 @@ h1 {
     /* PREGUNTA */
 
     .question {
+
         font-size: 24px;
+
         margin: 7px 0 12px;
     }
 
     .buttons {
+
         height: 65px;
+
         gap: 18px;
     }
 
     .choice {
+
         font-size: 15px;
+
         padding: 8px 19px;
     }
 
@@ -586,28 +761,44 @@ h1 {
     /* FINAL */
 
     .final-message {
+
         width: 96%;
+
         font-size: 15px;
+
         line-height: 1.4;
     }
 }
 
 
+/* =========================
+   CELULARES MUY CHICOS
+========================= */
+
 @media (max-width: 380px) {
 
     .large-window {
-        width: 94vw;
-        aspect-ratio: 3 / 4;
 
-        padding:
-            22% 6.7% 5%;
+        width: min(94vw, 66vh);
+
+        aspect-ratio: 3000 / 4000;
+
+        padding-top: 21.3%;
+        padding-right: 7%;
+        padding-bottom: 5%;
+        padding-left: 6.7%;
     }
 
     .small-window {
-        width: 94vw;
-        aspect-ratio: 1 / 1;
 
-        padding: 95px 17px 17px;
+        width: min(94vw, 88vh);
+
+        aspect-ratio: 4845 / 4435;
+
+        padding-top: 31.6%;
+        padding-right: 7%;
+        padding-bottom: 8%;
+        padding-left: 6.7%;
     }
 
     .large-window .cat {
@@ -631,12 +822,16 @@ h1 {
     }
 
     .letter-text {
+
         font-size: 12px;
+
         line-height: 1.35;
     }
 
     .next-btn {
+
         font-size: 13px;
+
         padding: 7px 11px;
     }
 }
