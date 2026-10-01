@@ -132,6 +132,78 @@ function nextPage() {
 
 
 /* =========================
+   VOLVER A LA PÁGINA ANTERIOR
+========================= */
+
+function previousPage() {
+
+    /*
+       PÁGINA 5 -> PÁGINA 4
+    */
+
+    if (currentPage === 4) {
+
+        pages[currentPage].classList.remove("active");
+
+        currentPage = 3;
+
+        pages[currentPage].classList.add("active");
+
+        return;
+    }
+
+
+    /*
+       PÁGINA 4 -> PÁGINA 3
+    */
+
+    if (currentPage === 3) {
+
+        smallWindow.classList.remove("open");
+
+        setTimeout(() => {
+
+            smallWindow.style.display = "none";
+
+            largeWindow.style.display = "flex";
+
+            pages[currentPage].classList.remove("active");
+
+            currentPage = 2;
+
+            pages[currentPage].classList.add("active");
+
+            requestAnimationFrame(() => {
+
+                largeWindow.classList.add("open");
+
+            });
+
+        }, 500);
+
+        return;
+    }
+
+
+    /*
+       PÁGINA 3 -> PÁGINA 2
+       PÁGINA 2 -> PÁGINA 1
+    */
+
+    if (currentPage > 0) {
+
+        pages[currentPage].classList.remove("active");
+
+        currentPage--;
+
+        pages[currentPage].classList.add("active");
+
+    }
+
+}
+
+
+/* =========================
    BOTÓN "NO"
 ========================= */
 
@@ -224,6 +296,13 @@ function sayYes() {
 
 
     setTimeout(() => {
+
+        /*
+           La página final es la página 5.
+        */
+
+        currentPage = 4;
+
 
         /*
            Mostramos la respuesta final.
