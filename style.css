@@ -184,22 +184,15 @@ body {
 ========================= */
 
 .large-window {
-
     width: min(75vw, 67.5vh, 750px);
 
     aspect-ratio: 3000 / 4000;
 
     background-image: url("window-large.png");
 
-    /*
-       Dejamos el padding como estaba,
-       porque este sistema sí funciona
-       con tu estructura actual.
-    */
-
-    padding-top: 21.3%;
+    padding-top: 17%;
     padding-right: 7%;
-    padding-bottom: 5.2%;
+    padding-bottom: 4%;
     padding-left: 6.7%;
 }
 
@@ -265,10 +258,9 @@ body {
 ========================= */
 
 h1 {
+    font-size: clamp(24px, 3.5vw, 30px);
 
-    font-size: clamp(25px, 4vw, 32px);
-
-    margin: 0 0 10px;
+    margin: 0 0 5px;
 
     flex-shrink: 0;
 }
@@ -279,10 +271,9 @@ h1 {
 ========================= */
 
 .cat {
+    width: 155px;
 
-    width: 190px;
-
-    margin: 8px 0 6px;
+    margin: 2px 0 2px;
 
     flex-shrink: 0;
 
@@ -290,15 +281,15 @@ h1 {
 }
 
 .small-cat {
-    width: 150px;
+    width: 125px;
 }
 
 .question-cat {
-    width: 155px;
+    width: 135px;
 }
 
 .final-cat {
-    width: 190px;
+    width: 165px;
 }
 
 
@@ -309,26 +300,53 @@ h1 {
 .letter-text {
 
     width: 100%;
-    max-width: 100%;
 
-    font-size: clamp(15px, 1.55vw, 18px);
+    /*
+       El texto ocupa prácticamente
+       todo el espacio disponible.
+    */
+    flex: 1;
 
-    line-height: 1.48;
+    min-height: 0;
+
+    font-size: clamp(16px, 1.65vw, 19px);
+
+    line-height: 1.5;
 
     overflow-y: auto;
     overflow-x: hidden;
 
-    padding: 2px 10px 5px;
+    /*
+       Lo subimos y dejamos un área
+       de lectura más cómoda.
+    */
+    padding: 0 14px 10px;
 
-    margin-bottom: 8px;
-
-    flex: 1;
+    margin: 0 0 5px;
 
     scrollbar-width: thin;
 
     scrollbar-color:
         #e9a9bb
         transparent;
+}
+
+.letter-text::-webkit-scrollbar {
+    width: 7px;
+}
+
+.letter-text::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.letter-text::-webkit-scrollbar-thumb {
+    background: #e9a9bb;
+
+    border-radius: 10px;
+}
+
+.letter-text p {
+    margin: 8px 0;
 }
 
 .letter-text::-webkit-scrollbar {
@@ -581,16 +599,15 @@ h1 {
     ========================= */
 
     .large-window {
+    width: min(94vw, 68vh);
 
-        width: min(94vw, 68vh);
+    aspect-ratio: 3000 / 4000;
 
-        aspect-ratio: 3000 / 4000;
-
-        padding-top: 21.3%;
-        padding-right: 7%;
-        padding-bottom: 5.2%;
-        padding-left: 6.7%;
-    }
+    padding-top: 17%;
+    padding-right: 7%;
+    padding-bottom: 4%;
+    padding-left: 6.7%;
+}
 
 
     /* =========================
@@ -612,18 +629,16 @@ h1 {
 
     /* GATITOS */
 
-    .large-window .cat {
+   .large-window .cat {
+    width: 105px;
 
-        width: 125px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
 
-        margin-top: 4px;
-        margin-bottom: 3px;
-    }
-
-    .large-window .small-cat {
-        width: 105px;
-    }
-
+.large-window .small-cat {
+    width: 90px;
+}
     .small-window .question-cat {
         width: 100px;
     }
@@ -636,11 +651,9 @@ h1 {
     /* TÍTULOS */
 
     h1 {
-
-        font-size: 23px;
-
-        margin-bottom: 6px;
-    }
+    font-size: 21px;
+    margin-bottom: 4px;
+}
 
 
     /* CARTA */
