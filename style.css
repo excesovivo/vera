@@ -625,13 +625,13 @@ h1 {
     .small-window .question-cat {
         width: 100px;
 
-        margin: -10px 0 4px;
+        margin: -18px 0 4px;
     }
 
     .small-window .final-cat {
         width: 125px;
 
-        margin: -10px 0 4px;
+        margin: -18px 0 4px;
     }
 
 
@@ -654,7 +654,7 @@ h1 {
 
         flex: 0 1 auto;
 
-        height: calc(100% - 100px);
+        height: calc(100% - 85px);
 
         min-height: 0;
 
