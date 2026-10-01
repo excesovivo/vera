@@ -545,7 +545,6 @@ h1 {
 
     #envelope-container {
         max-width: 90vw;
-
         padding: 15px;
     }
 
@@ -579,11 +578,8 @@ h1 {
         aspect-ratio: 3000 / 4000;
 
         padding-top: 10%;
-
         padding-right: 4%;
-
         padding-bottom: 4%;
-
         padding-left: 4%;
     }
 
@@ -598,11 +594,8 @@ h1 {
         aspect-ratio: 4845 / 4435;
 
         padding-top: 31.6%;
-
         padding-right: 7%;
-
         padding-bottom: 8%;
-
         padding-left: 6.7%;
     }
 
@@ -642,7 +635,6 @@ h1 {
 
     h1 {
         font-size: 21px;
-
         margin-bottom: 2px;
     }
 
@@ -655,12 +647,11 @@ h1 {
         width: calc(100% + 6px);
 
         flex: 1 1 auto;
-
         min-height: 0;
 
-        font-size: 13px;
+        font-size: 14px;
 
-        line-height: 1.4;
+        line-height: 1.45;
 
         padding: 0 1px 6px;
 
@@ -688,9 +679,13 @@ h1 {
     ========================= */
 
     .question {
-        font-size: 24px;
+        font-size: 23px;
 
         margin: 7px 0 12px;
+    }
+
+    .question span {
+        font-size: 17px;
     }
 
     .buttons {
@@ -732,11 +727,8 @@ h1 {
         aspect-ratio: 3000 / 4000;
 
         padding-top: 10%;
-
         padding-right: 3.5%;
-
         padding-bottom: 4%;
-
         padding-left: 3.5%;
     }
 
@@ -746,16 +738,15 @@ h1 {
         aspect-ratio: 4845 / 4435;
 
         padding-top: 31.6%;
-
         padding-right: 7%;
-
         padding-bottom: 8%;
-
         padding-left: 6.7%;
     }
 
 
-    /* GATITOS */
+    /* =========================
+       GATITOS
+    ========================= */
 
     .large-window .cat {
         width: 95px;
@@ -778,27 +769,33 @@ h1 {
     }
 
 
-    /* TÍTULO */
+    /* =========================
+       TÍTULO
+    ========================= */
 
     h1 {
         font-size: 21px;
     }
 
 
-    /* CARTA */
+    /* =========================
+       CARTA
+    ========================= */
 
     .letter-text {
         width: calc(100% + 5px);
 
-        font-size: 12px;
+        font-size: 13px;
 
-        line-height: 1.35;
+        line-height: 1.4;
 
         padding: 0 1px 5px;
     }
 
 
-    /* BOTÓN */
+    /* =========================
+       BOTÓN
+    ========================= */
 
     .next-btn {
         font-size: 13px;
