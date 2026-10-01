@@ -170,6 +170,8 @@ body {
 
     opacity: 0;
 
+    overflow: visible;
+
     transition: opacity 0.5s ease;
 }
 
@@ -197,6 +199,8 @@ body {
     padding-bottom: 4%;
 
     padding-left: 4.5%;
+
+    overflow: visible;
 }
 
 /* =========================
