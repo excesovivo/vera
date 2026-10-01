@@ -274,10 +274,6 @@ h1 {
 .cat {
     width: 155px;
 
-    /*
-       Un poquito más abajo para
-       que se vean bien los ojitos.
-    */
     margin: -40px 0 -15px;
 
     flex-shrink: 0;
@@ -445,6 +441,15 @@ h1 {
 
 
 /* =========================
+   BOTÓN ATRÁS — FINAL PC
+========================= */
+
+#final-page .back-btn {
+    transform: translateY(0);
+}
+
+
+/* =========================
    PREGUNTA
 ========================= */
 
@@ -541,16 +546,28 @@ h1 {
 
 .final-message {
     width: 94%;
+
     max-width: 700px;
+
     height: 210px;
+
     font-size: clamp(16px, 2vw, 21px);
+
     line-height: 1.45;
+
     overflow-y: auto;
+
     padding: 0 10px 5px;
+
     margin-bottom: 5px;
+
     flex-shrink: 0;
+
     scrollbar-width: thin;
-    scrollbar-color: #e9a9bb transparent;
+
+    scrollbar-color:
+        #e9a9bb
+        transparent;
 }
 
 .final-message::-webkit-scrollbar {
@@ -675,7 +692,7 @@ h1 {
     }
 
     .small-window .final-cat {
-        width:80px;
+        width: 80px;
 
         margin: -18px 0 4px;
     }
@@ -687,6 +704,7 @@ h1 {
 
     h1 {
         font-size: 21px;
+
         margin-bottom: 2px;
     }
 
@@ -719,7 +737,7 @@ h1 {
 
 
     /* =========================
-       BOTÓN
+       BOTÓN SIGUIENTE
     ========================= */
 
     .next-btn {
@@ -788,7 +806,7 @@ h1 {
 
         margin-bottom: 5px;
     }
-    
+
     #final-page .back-btn {
         transform: translateY(-80px);
     }
@@ -885,7 +903,7 @@ h1 {
 
 
     /* =========================
-       BOTÓN
+       BOTONES
     ========================= */
 
     .next-btn {
