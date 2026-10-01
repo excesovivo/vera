@@ -54,6 +54,10 @@ body {
 }
 
 
+/* =========================
+   ANIMACIONES
+========================= */
+
 @keyframes pulse {
     0% {
         transform: scale(1);
@@ -68,7 +72,6 @@ body {
     }
 }
 
-
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -80,7 +83,6 @@ body {
         transform: scale(1);
     }
 }
-
 
 @keyframes pageIn {
     from {
@@ -96,35 +98,25 @@ body {
 
 
 /* =========================
-   CARTA
+   CONTENEDOR GENERAL
 ========================= */
 
 #letter-container {
     display: none;
     position: fixed;
     inset: 0;
-
     justify-content: center;
     align-items: center;
-
     padding: 15px;
 }
 
 
-/*
-   Esta es la parte importante:
-   usamos una ventana casi cuadrada,
-   parecida a la original.
-*/
+/* =========================
+   VENTANA BASE
+========================= */
 
 .letter-window {
-    width: min(90vw, 800px);
-
-    aspect-ratio: 1 / 1;
-
-    max-height: 90vh;
-
-    padding: 180px 60px 35px;
+    position: relative;
 
     display: flex;
     flex-direction: column;
@@ -134,17 +126,12 @@ body {
 
     text-align: center;
 
-    background-image: url("window.png");
-    background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: center;
+    background-size: 100% 100%;
 
-    border-radius: 12px;
-
-    gap: 1px;
-
-    transform: scale(1.2);
     opacity: 0;
+    transform: scale(1.08);
 
     transition:
         transform 0.6s ease,
@@ -152,8 +139,48 @@ body {
 }
 
 .letter-window.open {
-    transform: scale(1);
     opacity: 1;
+    transform: scale(1);
+}
+
+
+/* =========================
+   VENTANA GRANDE
+   3000 x 4000
+========================= */
+
+.large-window {
+    width: min(82vw, 720px);
+
+    aspect-ratio: 3 / 4;
+
+    background-image: url("window-large.png");
+
+    /*
+       La zona escribible de la imagen empieza
+       aproximadamente en Y 852 / 4000 = 21.3%
+
+       Por eso dejamos espacio arriba para que
+       el contenido empiece dentro de esa zona.
+    */
+
+    padding:
+        22% 6.7% 5.2%;
+}
+
+
+/* =========================
+   VENTANA CHICA
+========================= */
+
+.small-window {
+    width: min(90vw, 800px);
+
+    aspect-ratio: 1 / 1;
+
+    background-image: url("window.png");
+
+    padding: 150px 55px 30px;
 }
 
 
@@ -166,8 +193,8 @@ body {
     height: 100%;
 
     display: none;
-    flex-direction: column;
 
+    flex-direction: column;
     justify-content: flex-start;
     align-items: center;
 
@@ -189,9 +216,7 @@ body {
 
 h1 {
     font-size: clamp(25px, 4vw, 32px);
-
-    margin: 0 0 8px;
-
+    margin: 0 0 10px;
     flex-shrink: 0;
 }
 
@@ -201,9 +226,9 @@ h1 {
 ========================= */
 
 .cat {
-    width: 200px;
+    width: 190px;
 
-    margin: 0 0 5px;
+    margin: 8px 0 6px;
 
     flex-shrink: 0;
 
@@ -211,7 +236,7 @@ h1 {
 }
 
 .small-cat {
-    width: 155px;
+    width: 150px;
 }
 
 .question-cat {
@@ -219,25 +244,26 @@ h1 {
 }
 
 .final-cat {
-    width: 200px;
+    width: 190px;
 }
 
 
 /* =========================
-   TEXTO
+   TEXTO DE LA CARTA
 ========================= */
 
 .letter-text {
-    width: 94%;
-    max-width: 650px;
+    width: 100%;
+    max-width: 100%;
 
-    font-size: clamp(14px, 1.7vw, 17px);
-    line-height: 1.45;
+    font-size: clamp(15px, 1.55vw, 18px);
+
+    line-height: 1.48;
 
     overflow-y: auto;
     overflow-x: hidden;
 
-    padding: 2px 12px 5px 5px;
+    padding: 2px 10px 5px;
 
     margin-bottom: 8px;
 
@@ -261,7 +287,7 @@ h1 {
 }
 
 .letter-text p {
-    margin: 8px 0;
+    margin: 9px 0;
 }
 
 
@@ -322,7 +348,7 @@ h1 {
 
 
 /* =========================
-   BOTONES SÍ / NO
+   BOTONES
 ========================= */
 
 .buttons {
@@ -393,6 +419,7 @@ h1 {
     max-width: 560px;
 
     font-size: clamp(16px, 2vw, 21px);
+
     line-height: 1.45;
 
     overflow-y: auto;
@@ -435,8 +462,6 @@ h1 {
         overflow: hidden;
     }
 
-    /* SOBRE */
-
     #envelope-container {
         max-width: 90vw;
         padding: 15px;
@@ -454,73 +479,77 @@ h1 {
         font-size: 14px;
     }
 
-
-    /* CARTA */
-
     #letter-container {
-        padding: 8px;
+        padding: 5px;
     }
 
-    .letter-window {
-        /*
-           En celular la hacemos cuadrada,
-           pero un poco más grande para que
-           el texto siga siendo legible.
-        */
 
+    /* GRANDE */
+
+    .large-window {
         width: 94vw;
-        height: 94vw;
 
-        max-height: 94vh;
+        /*
+           Se mantiene 3:4.
+           NO se convierte en cuadrado.
+        */
+        aspect-ratio: 3 / 4;
 
+        padding:
+            22% 6.7% 5.2%;
+    }
+
+
+    /* CHICA */
+
+    .small-window {
+        width: 94vw;
         aspect-ratio: 1 / 1;
 
-        /*
-           Este es el equivalente al
-           padding-top: 180px del original.
-        */
-
-        padding: 115px 22px 22px;
+        padding: 105px 20px 20px;
     }
 
 
-    /* GATITO */
+    /* GATOS */
 
-    .cat {
-        width: 130px;
+    .large-window .cat {
+        width: 125px;
+        margin-top: 4px;
         margin-bottom: 3px;
     }
 
-    .small-cat {
+    .large-window .small-cat {
+        width: 105px;
+    }
+
+    .small-window .question-cat {
         width: 100px;
     }
 
-    .question-cat {
-        width: 100px;
-    }
-
-    .final-cat {
-        width: 130px;
+    .small-window .final-cat {
+        width: 125px;
     }
 
 
-    /* TÍTULO */
+    /* TÍTULOS */
 
     h1 {
-        font-size: 24px;
-        margin-bottom: 7px;
+        font-size: 23px;
+        margin-bottom: 6px;
     }
 
 
-    /* TEXTO */
+    /* CARTA */
 
     .letter-text {
-        width: 96%;
+        width: 100%;
 
         font-size: 13px;
+
         line-height: 1.4;
 
-        padding-right: 8px;
+        padding-right: 7px;
+        padding-left: 3px;
     }
 
     .letter-text p {
@@ -543,9 +572,6 @@ h1 {
         margin: 7px 0 12px;
     }
 
-
-    /* SÍ / NO */
-
     .buttons {
         height: 65px;
         gap: 18px;
@@ -567,34 +593,41 @@ h1 {
 }
 
 
-/* =========================
-   CELULARES MUY CHIQUITOS
-========================= */
-
 @media (max-width: 380px) {
 
-    .letter-window {
+    .large-window {
         width: 94vw;
-        height: 94vw;
+        aspect-ratio: 3 / 4;
 
-        padding: 100px 18px 18px;
+        padding:
+            22% 6.7% 5%;
     }
 
-    .cat {
-        width: 115px;
+    .small-window {
+        width: 94vw;
+        aspect-ratio: 1 / 1;
+
+        padding: 95px 17px 17px;
     }
 
-    .small-cat,
-    .question-cat {
-        width: 90px;
+    .large-window .cat {
+        width: 110px;
     }
 
-    .final-cat {
-        width: 115px;
+    .large-window .small-cat {
+        width: 92px;
+    }
+
+    .small-window .question-cat {
+        width: 88px;
+    }
+
+    .small-window .final-cat {
+        width: 110px;
     }
 
     h1 {
-        font-size: 22px;
+        font-size: 21px;
     }
 
     .letter-text {
