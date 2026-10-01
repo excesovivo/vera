@@ -542,7 +542,7 @@ h1 {
 .final-message {
     width: 94%;
     max-width: 700px;
-    height: 180px;
+    height: 210px;
     font-size: clamp(16px, 2vw, 21px);
     line-height: 1.45;
     overflow-y: auto;
@@ -790,7 +790,7 @@ h1 {
     }
     
     #final-page .back-btn {
-        transform: translateY(-60px);
+        transform: translateY(-80px);
     }
 
 }
