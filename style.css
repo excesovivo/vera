@@ -690,13 +690,13 @@ h1 {
     ========================= */
 
     .question {
-        font-size: 23px;
+        font-size: 20px;
 
-        margin: 7px 0 5px;
+        margin: 0px 0 5px;
     }
 
     .question span {
-        font-size: 17px;
+        font-size: 20px;
     }
 
     .buttons {
