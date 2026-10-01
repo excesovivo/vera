@@ -578,10 +578,15 @@ h1 {
 
         aspect-ratio: 3000 / 4000;
 
-        padding-top: 14%;
-        padding-right: 5.5%;
-        padding-bottom: 5%;
-        padding-left: 5.5%;
+        padding-top: 18%;
+        padding-right: 6%;
+        padding-bottom: 7%;
+        padding-left: 6%;
+    }
+
+    .large-window .page {
+        padding-top: 18px;
+        padding-bottom: 4px;
     }
 
 
@@ -608,13 +613,13 @@ h1 {
     .large-window .cat {
         width: 105px;
 
-        margin: 5px 0 -5px;
+        margin: 0 0 4px;
     }
 
     .large-window .small-cat {
         width: 90px;
 
-        margin: 5px 0 -5px;
+        margin: 0 0 4px;
     }
 
     .small-window .question-cat {
@@ -644,19 +649,19 @@ h1 {
        CARTA
     ========================= */
 
-    .letter-text {
-        width: calc(100% - 8px);
+    .large-window .letter-text {
+        width: calc(100% - 12px);
 
-        flex: 1 1 auto;
+        flex: 1 1 0;
         min-height: 0;
 
         font-size: 14px;
 
         line-height: 1.45;
 
-        padding: 0 2px 10px;
+        padding: 0 2px 12px;
 
-        margin: 5px 0 0;
+        margin: 8px 0 0;
     }
 
     .letter-text p {
@@ -727,11 +732,17 @@ h1 {
 
         aspect-ratio: 3000 / 4000;
 
-        padding-top: 14%;
-        padding-right: 5%;
-        padding-bottom: 5%;
-        padding-left: 5%;
+        padding-top: 18%;
+        padding-right: 5.5%;
+        padding-bottom: 7%;
+        padding-left: 5.5%;
     }
+
+    .large-window .page {
+        padding-top: 15px;
+        padding-bottom: 4px;
+    }
+
 
     .small-window {
         width: min(94vw, 88vh);
@@ -752,13 +763,13 @@ h1 {
     .large-window .cat {
         width: 95px;
 
-        margin: 3px 0 -4px;
+        margin: 0 0 3px;
     }
 
     .large-window .small-cat {
         width: 82px;
 
-        margin: 3px 0 -4px;
+        margin: 0 0 3px;
     }
 
     .small-window .question-cat {
@@ -783,16 +794,16 @@ h1 {
        CARTA
     ========================= */
 
-    .letter-text {
-        width: calc(100% - 7px);
+    .large-window .letter-text {
+        width: calc(100% - 10px);
 
         font-size: 13px;
 
         line-height: 1.4;
 
-        padding: 0 2px 8px;
+        padding: 0 2px 10px;
 
-        margin: 5px 0 0;
+        margin: 6px 0 0;
     }
 
 
