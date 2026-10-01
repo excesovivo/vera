@@ -578,14 +578,14 @@ h1 {
 
         aspect-ratio: 3000 / 4000;
 
-        padding-top: 23%;
+        padding-top: 29%;
         padding-right: 6%;
-        padding-bottom: 10%;
+        padding-bottom: 14%;
         padding-left: 6%;
     }
 
     .large-window .page {
-        padding-top: 22px;
+        padding-top: 30px;
         padding-bottom: 4px;
     }
 
@@ -652,7 +652,10 @@ h1 {
     .large-window .letter-text {
         width: calc(100% - 12px);
 
-        flex: 1 1 0;
+        flex: 0 1 auto;
+
+        height: calc(100% - 145px);
+
         min-height: 0;
 
         font-size: 14px;
@@ -734,14 +737,14 @@ h1 {
 
         aspect-ratio: 3000 / 4000;
 
-        padding-top: 23%;
+        padding-top: 29%;
         padding-right: 5.5%;
-        padding-bottom: 10%;
+        padding-bottom: 14%;
         padding-left: 5.5%;
     }
 
     .large-window .page {
-        padding-top: 19px;
+        padding-top: 25px;
         padding-bottom: 4px;
     }
 
@@ -798,6 +801,8 @@ h1 {
 
     .large-window .letter-text {
         width: calc(100% - 10px);
+
+        height: calc(100% - 125px);
 
         font-size: 13px;
 
