@@ -203,6 +203,7 @@ body {
     overflow: visible;
 }
 
+
 /* =========================
    VENTANA CHICA
    4845 × 4435
@@ -222,6 +223,7 @@ body {
     padding-bottom: 8%;
     padding-left: 6.7%;
 }
+
 
 /* =========================
    PÁGINAS
@@ -386,6 +388,56 @@ h1 {
 }
 
 .next-btn:hover {
+    transform: scale(1.05);
+
+    background: #efa5ba;
+}
+
+
+/* =========================
+   BOTÓN ATRÁS
+========================= */
+
+.page-buttons {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 10px;
+
+    flex-shrink: 0;
+}
+
+.back-btn {
+    border: none;
+
+    padding: 10px 20px;
+
+    margin-top: 5px;
+    margin-bottom: 0;
+
+    border-radius: 15px;
+
+    background: #f4b8c8;
+
+    color: #4d3038;
+
+    font-family: inherit;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    flex-shrink: 0;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+}
+
+.back-btn:hover {
     transform: scale(1.05);
 
     background: #efa5ba;
@@ -686,6 +738,23 @@ h1 {
 
 
     /* =========================
+       BOTÓN ATRÁS
+    ========================= */
+
+    .back-btn {
+        font-size: 14px;
+
+        padding: 8px 13px;
+
+        margin-top: 2px;
+    }
+
+    .page-buttons {
+        gap: 8px;
+    }
+
+
+    /* =========================
        PREGUNTA
     ========================= */
 
@@ -824,5 +893,17 @@ h1 {
         padding: 7px 11px;
 
         margin-top: 2px;
+    }
+
+    .back-btn {
+        font-size: 13px;
+
+        padding: 7px 11px;
+
+        margin-top: 2px;
+    }
+
+    .page-buttons {
+        gap: 6px;
     }
 }
